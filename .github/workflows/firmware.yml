@@ -1,14 +1,21 @@
-name: Generate Firmware Images
-run-name: ${{ github.actor }} Building Firmeware Images
+name: Building Firmware Images
+run-name: Building Firmeware Images
 on: [push]
 jobs:
   Build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
+    env:
+        RCLONE_CONFIG_RSHARE_VENDOR: nextcloud
+        RCLONE_CONFIG_RSHARE_TYPE: webdav
+        RCLONE_CONFIG_RSHARE_PASS: ${{ secrets.RCLONE_CONFIG_RSHARE_PASS }}
+        RCLONE_CONFIG_RSHARE_URL: ${{ secrets.RCLONE_CONFIG_RSHARE_URL }}
+        RCLONE_CONFIG_RSHARE_USER: ${{ secrets.RCLONE_CONFIG_RSHARE_USER }}
+
     steps:
       - name: "Checkout Sources"
         uses: actions/checkout@v4
       - name: "Setup Ruby"
-        uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1' 
       - name: Restore Download Cache
@@ -16,11 +23,11 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: |
-            /var/cache/apt/archives/*.deb
-            openwrt-imagebuilder-*.tar.xz
+            openwrt-imagebuilder-23.05.5-x86-64.Linux-x86_64
+            openwrt-imagebuilder-23.05.5-x86-64.Linux-x86_64.tar.xz
           key: download-cache
       - name: Install Build depdencies
-        run: sudo apt-get install -y rake build-essential make gawk
+        run: sudo apt-get install -y rake build-essential make gawk rclone 
       - run: rake
         name: Building Firmware
       - uses: actions/upload-artifact@v4
@@ -30,9 +37,11 @@ jobs:
             path: bin/*-squashfs-combined.img.gz
       - name: Save Download Cache
         id: cache-save
-        uses: actions/cache@v4
+        uses: actions/cache/save@v4
         with:
           path: |
-            /var/cache/apt/archives/*.deb
-            openwrt-imagebuilder-*.tar.xz
-          key: download-cache
+            openwrt-imagebuilder-23.05.5-x86-64.Linux-x86_64
+            openwrt-imagebuilder-23.05.5-x86-64.Linux-x86_64.tar.xz
+          key: ${{ steps.cache-restore.outputs.cache-primary-key }}
+      - name: Deploy to Nextcloud
+        run: rclone copy bin rshare:/firmware
