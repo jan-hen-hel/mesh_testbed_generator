@@ -20,7 +20,7 @@ jobs:
             openwrt-imagebuilder-*.tar.xz
           key: download-cache
       - name: Install Build depdencies
-        run: sudo apt-get install -y rake build-essential make gawk
+        run: sudo apt-get install -y rake build-essential make gawk rclone 
       - run: rake
         name: Building Firmware
       - uses: actions/upload-artifact@v4
@@ -36,3 +36,5 @@ jobs:
             /var/cache/apt/archives/*.deb
             openwrt-imagebuilder-*.tar.xz
           key: download-cache
+      - name: Deploy to Nextcloud
+        run: rclone copy bin/*-squashfs-combined.img.gz rshare:/${{ vars.GITHUB_JOB }}
