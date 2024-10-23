@@ -1,26 +1,17 @@
 apu-1:
   profile: 'generic'
-  hostname: 'apu-1'
+  hostname: 'smarthome-apu-10'
   packages: 'openvswitch wpad kmod-mt7915-firmware kmod-mt7915e'
-  ipv4: '192.168.2.1'
-  ipv4_lan: '192.168.101.'
-  ipv6: 'fc00:1::'
-  ipv6_ll: 'fe80::1'
+  ipv4_lan: '192.168.3.10'
 
 apu-2:
   profile: 'generic'
-  hostname: 'apu-2'
+  hostname: 'smarthome-apu-11'
   packages: 'openvswitch wpad kmod-mt7915-firmware kmod-mt7915e'
-  ipv4: '192.168.2.2'
-  ipv4_lan: '192.168.102.'
-  ipv6: 'fc00:2::'
-  ipv6_ll: 'fe80::2'
+  ipv4_lan: '192.168.3.11'
 
 apu-3:
   profile: 'generic'
-  hostname: 'apu-3'
+  hostname: 'smarthome-apu-12'
   packages: 'openvswitch wpad kmod-mt7915-firmware kmod-mt7915e'
-  ipv4: '192.168.2.3'
-  ipv4_lan: '192.168.103.'
-  ipv6: 'fc00:3::'
-  ipv6_ll: 'fe80::3'
+  ipv4_lan: '192.168.3.12'

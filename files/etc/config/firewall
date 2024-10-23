@@ -1,25 +1,25 @@
-
 config defaults
-	option syn_flood '1'
-	option input 'ACCEPT'
+	option input 'REJECT'
 	option output 'ACCEPT'
 	option forward 'REJECT'
+	option synflood_protect '1'
 
 config zone
 	option name 'lan'
+	list network 'lan'
 	option input 'ACCEPT'
 	option output 'ACCEPT'
 	option forward 'ACCEPT'
-	option network 'adhoc lan'
 
 config zone
 	option name 'wan'
+	list network 'wan'
+	list network 'wan6'
 	option input 'REJECT'
 	option output 'ACCEPT'
 	option forward 'REJECT'
 	option masq '1'
 	option mtu_fix '1'
-	option network 'wan wan6'
 
 config forwarding
 	option src 'lan'
@@ -52,8 +52,6 @@ config rule
 	option name 'Allow-DHCPv6'
 	option src 'wan'
 	option proto 'udp'
-	option src_ip 'fc00::/6'
-	option dest_ip 'fc00::/6'
 	option dest_port '546'
 	option family 'ipv6'
 	option target 'ACCEPT'
@@ -120,6 +118,13 @@ config rule
 	option proto 'udp'
 	option target 'ACCEPT'
 
-config include
-	option path '/etc/firewall.user'
+config zone
+	option name 'mgmt'
+	option input 'ACCEPT'
+	option output 'ACCEPT'
+	option forward 'ACCEPT'
+	list network 'mgmt'
 
+config forwarding
+	option src 'mgmt'
+	option dest 'lan'
