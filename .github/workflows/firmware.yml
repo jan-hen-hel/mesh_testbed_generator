@@ -4,6 +4,12 @@ on: [push]
 jobs:
   Build:
     runs-on: ubuntu-24.04
+    env:
+        RCLONE_CONFIG_RSHARE_VENDOR: nextcloud
+        RCLONE_CONFIG_RSHARE_TYPE: webdav
+        RCLONE_CONFIG_RSHARE_PASS: ${{ secrets.RCLONE_CONFIG_RSHARE_PASS }}
+        RCLONE_CONFIG_RSHARE_URL: ${{ secrets.RCLONE_CONFIG_RSHARE_URL }}
+        RCLONE_CONFIG_RSHARE_USER: ${{ secrets.RCLONE_CONFIG_RSHARE_USER }}
     steps:
       - name: "Checkout Sources"
         uses: actions/checkout@v4
@@ -15,7 +21,9 @@ jobs:
         id: cache-restore
         uses: actions/cache/restore@v4
         with:
-          path: openwrt-imagebuilder-*.tar.xz
+          path: |
+            openwrt-imagebuilder-23.05.5-x86-64.Linux-x86_64
+            openwrt-imagebuilder-23.05.5-x86-64.Linux-x86_64.tar.xz
           key: download-cache
       - name: Install Build depdencies
         run: sudo apt-get install -y rake build-essential make gawk rclone 
@@ -30,7 +38,9 @@ jobs:
         id: cache-save
         uses: actions/cache@v4
         with:
-          path: openwrt-imagebuilder-*.tar.xz
+          path: |
+            openwrt-imagebuilder-23.05.5-x86-64.Linux-x86_64
+            openwrt-imagebuilder-23.05.5-x86-64.Linux-x86_64.tar.xz
           key: download-cache
       - name: Deploy to Nextcloud
         run: rclone copy bin/\*-squashfs-combined.img.gz rshare:/${{ vars.GITHUB_JOB }}
