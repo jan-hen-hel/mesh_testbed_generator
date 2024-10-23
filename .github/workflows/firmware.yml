@@ -44,4 +44,4 @@ jobs:
             openwrt-imagebuilder-23.05.5-x86-64.Linux-x86_64.tar.xz
           key: ${{ steps.cache-restore.outputs.cache-primary-key }}
       - name: Deploy to Nextcloud
-        run: rclone copy bin rshare:
+        run: rclone sync bin/ rshare:firmware/
