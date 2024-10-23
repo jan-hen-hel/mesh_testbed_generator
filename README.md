@@ -1,7 +1,7 @@
 Mesh Testbed Generator
 =======================
 
-Buildsystem to generate custom Lede-Firmware files for different nodes in a testbed.
+Buildsystem to generate custom OpenWRT-Firmware files for different nodes in a testbed.
 
 Motivation
 -------------
@@ -25,14 +25,5 @@ Usage
 2. Adapt templates in `files`
 3. Run `rake`
 
-OpenWRT Release (Chaos Calmer) and Platform (TL-WR842nd v2) is hardcoded in `Rakefile`. You have to change it to support other platforms.
+OpenWRT Release and Platformare hardcoded in `Rakefile`. You have to change it to support other platforms.
 
-Current Configuration
-------------------------
-Current configuration includes
-* Packages like ip, babeld, batman-adv for testing diffrent routing scenarios
-* A collectd configuration ping'ing all nodes for measurements
-* A wireless configuration putting the wifi into mesh mode while setting TX-power to a minimum
-* IPv4 and IPv6 assignments for testing 
-* SSH-Key and root-password for accessing the nodes
-* Firewall-Rules to allow connections via SSH from WAN
