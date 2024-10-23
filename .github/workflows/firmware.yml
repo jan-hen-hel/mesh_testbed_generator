@@ -1,5 +1,5 @@
 name: Generate firmware
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: ${{ github.actor }} building firmeware
 on: [push]
 jobs:
   Build-images:
