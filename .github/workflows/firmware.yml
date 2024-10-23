@@ -1,5 +1,5 @@
-name: Generate Firmware Images
-run-name: ${{ github.actor }} Building Firmeware Images
+name: Building Firmware Images
+run-name: Building Firmeware Images
 on: [push]
 jobs:
   Build:
@@ -37,4 +37,4 @@ jobs:
             openwrt-imagebuilder-*.tar.xz
           key: download-cache
       - name: Deploy to Nextcloud
-        run: rclone copy bin/*-squashfs-combined.img.gz rshare:/${{ vars.GITHUB_JOB }}
+        run: rclone copy bin/\*-squashfs-combined.img.gz rshare:/${{ vars.GITHUB_JOB }}
