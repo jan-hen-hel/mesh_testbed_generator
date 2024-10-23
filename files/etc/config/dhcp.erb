@@ -30,7 +30,7 @@ config dhcp 'lan'
 	option ra 'server'
 	list ra_flags 'managed-config'
 	list ra_flags 'other-config'
-	<%= "option ignore '1'" unless 'true' == @node['run_dhcpd_on_lan'] %>
+	<%= "option ignore '1'" unless @node['run_dhcpd_on_lan'] %>
 
 config dhcp 'wan'
 	option interface 'wan'

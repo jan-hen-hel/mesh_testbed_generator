@@ -62,7 +62,7 @@ def generate_firmware(node_name,profile,packages)
   end
   # Unzip certain images for easier dd'ing
   Dir.glob("bin/*.img.gz").each do |zipped_image|
-    system("gunzip ${zipped_image}")
+    system("gunzip #{zipped_image}")
   end
 end
 
