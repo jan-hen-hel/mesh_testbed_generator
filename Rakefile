@@ -60,7 +60,10 @@ def generate_firmware(node_name,profile,packages)
     puts "Moving #{bin_file} to bin/#{new_name} "
     FileUtils.mv(bin_file, "bin/#{new_name}")
   end
-
+  # Unzip certain images for easier dd'ing
+  Dir.glob("bin/*.img.gz") do |zipped_image|
+    system("gunzip ${zipped_image}")
+  end
 end
 
 task :install_sdk do 
