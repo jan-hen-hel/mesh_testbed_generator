@@ -1,17 +1,38 @@
-name: Generate firmware
-run-name: ${{ github.actor }} building firmeware
+name: Generate Firmware Images
+run-name: ${{ github.actor }} Building Firmeware Images
 on: [push]
 jobs:
-  Build-images:
+  Build:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
+      - name: "Checkout Sources"
+        uses: actions/checkout@v4
+      - name: "Setup Ruby"
+        uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
         with:
-          ruby-version: '3.1' # Not needed with a .ruby-version file
-      - run: sudo apt-get install -y rake build-essential make gawk
+          ruby-version: '3.1' 
+      - name: Restore Download Cache
+        id: cache-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            /var/cache/apt/archives/*.deb
+            openwrt-imagebuilder-*.tar.xz
+          key: download-cache
+      - name: Install Build depdencies
+        run: sudo apt-get install -y rake build-essential make gawk
       - run: rake
+        name: Building Firmware
       - uses: actions/upload-artifact@v4
+        name: Uploading Firmware Artifacts
         with:
             name: firmware
-            path: bin/*
+            path: bin/*-squashfs-combined.img.gz
+      - name: Save Download Cache
+        id: cache-save
+        uses: actions/cache@v4
+        with:
+          path: |
+            /var/cache/apt/archives/*.deb
+            openwrt-imagebuilder-*.tar.xz
+          key: download-cache
