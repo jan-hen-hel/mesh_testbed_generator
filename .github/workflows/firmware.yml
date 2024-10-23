@@ -5,11 +5,13 @@ jobs:
   Build-images:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
+      - name: "Checkout Sources"
+        uses: actions/checkout@v4
+      - name: "Setup Ruby"
+        uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
         with:
           ruby-version: '3.1' 
-      - name: Restore cached Primes
+      - name: Restore Download Cache
         id: cache-restore
         uses: actions/cache/restore@v4
         with:
@@ -17,17 +19,20 @@ jobs:
             /var/cache/apt/archives
             openwrt-imagebuilder-*.tar.xz
           key: download-cache
-      - run: sudo apt-get install -y rake build-essential make gawk
+      - name: Install Build depdencies
+        run: sudo apt-get install -y rake build-essential make gawk
       - run: rake
+        name: Building Firmware
       - uses: actions/upload-artifact@v4
+        name: Uploading Firmware Artifacts
         with:
             name: firmware
             path: bin/*-squashfs-combined.img.gz
-      - name: Cache downloads
+      - name: Save Download Cache
         id: cache-save
         uses: actions/cache@v4
         with:
           path: |
             /var/cache/apt/archives
             openwrt-imagebuilder-*.tar.xz
-          key: ${{ steps.cache-restore.outputs.download-cache }}
+          key: download-cache
