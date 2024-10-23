@@ -2,11 +2,11 @@ require "erb"
 require "rake"
 require 'yaml'
 
-OPENWRT_VERSION="23.05.5"
-PLATFORM="x86"
-PLATFORM_TYPE="64"
-DOWNLOAD_BASE="https://downloads.openwrt.org/releases/#{OPENWRT_VERSION}/targets/#{PLATFORM}/#{PLATFORM_TYPE}/"
-SDK_BASE="openwrt-imagebuilder-#{OPENWRT_VERSION}-#{PLATFORM}-#{PLATFORM_TYPE}.Linux-x86_64"
+OPENWRT_VERSION     = ENV['MESH_GEN_OPENWRT_VERSION'] || "23.05.5"
+PLATFORM            = ENV['MESH_GEN_PLATFORM']        ||  "x86"
+PLATFORM_TYPE       = ENV['MESH_GEN_PLATFORM_TYPE']   || "64"
+DOWNLOAD_BASE       = ENV['MESH_GEN_DOWNLOAD_BASE']   || "https://downloads.openwrt.org/releases/#{OPENWRT_VERSION}/targets/#{PLATFORM}/#{PLATFORM_TYPE}/"
+SDK_BASE            = ENV['MESH_GEN_SDK_BASE']        || "openwrt-imagebuilder-#{OPENWRT_VERSION}-#{PLATFORM}-#{PLATFORM_TYPE}.Linux-x86_64"
 
 task :default => :generate_all
 task :generate_all => :install_sdk do
