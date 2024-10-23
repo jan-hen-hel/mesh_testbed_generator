@@ -3,7 +3,7 @@ run-name: Building Firmeware Images
 on: [push]
 jobs:
   Build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: "Checkout Sources"
         uses: actions/checkout@v4
@@ -15,9 +15,7 @@ jobs:
         id: cache-restore
         uses: actions/cache/restore@v4
         with:
-          path: |
-            /var/cache/apt/archives/*.deb
-            openwrt-imagebuilder-*.tar.xz
+          path: openwrt-imagebuilder-*.tar.xz
           key: download-cache
       - name: Install Build depdencies
         run: sudo apt-get install -y rake build-essential make gawk rclone 
@@ -32,9 +30,7 @@ jobs:
         id: cache-save
         uses: actions/cache@v4
         with:
-          path: |
-            /var/cache/apt/archives/*.deb
-            openwrt-imagebuilder-*.tar.xz
+          path: openwrt-imagebuilder-*.tar.xz
           key: download-cache
       - name: Deploy to Nextcloud
         run: rclone copy bin/\*-squashfs-combined.img.gz rshare:/${{ vars.GITHUB_JOB }}
