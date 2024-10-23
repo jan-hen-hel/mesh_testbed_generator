@@ -1,17 +1,20 @@
 apu-1:
   profile: 'generic'
   hostname: 'smarthome-apu-10'
-  packages: 'openvswitch wpad kmod-mt7915-firmware kmod-mt7915e'
-  ipv4_lan: '192.168.3.10'
+  packages: 'openvswitch wpad kmod-mt7915-firmware kmod-mt7915e luci-ssl'
+  ipv4_lan: '198.19.3.10'
+  run_dhcpd_on_lan: true
 
 apu-2:
   profile: 'generic'
   hostname: 'smarthome-apu-11'
-  packages: 'openvswitch wpad kmod-mt7915-firmware kmod-mt7915e'
-  ipv4_lan: '192.168.3.11'
+  packages: 'openvswitch wpad kmod-mt7915-firmware kmod-mt7915e luci-ssl'
+  ipv4_lan: '198.19.3.11'
+  run_dhcpd_on_lan: false
 
 apu-3:
   profile: 'generic'
   hostname: 'smarthome-apu-12'
-  packages: 'openvswitch wpad kmod-mt7915-firmware kmod-mt7915e'
-  ipv4_lan: '192.168.3.12'
+  packages: 'openvswitch wpad kmod-mt7915-firmware kmod-mt7915e luci-ssl'
+  ipv4_lan: '198.19.3.12'
+  run_dhcpd_on_lan: false
