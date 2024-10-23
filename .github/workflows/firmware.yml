@@ -14,9 +14,9 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
             name: firmware
-            path: bin/*
+            path: bin/*-squashfs-combined.img.gz
       - name: Cache OpenWRT Downloads
-        id: cache-primes
+        id: cache-imagebuilder
         uses: actions/cache@v4
         with:
           path: openwrt-imagebuilder-23.05.5-x86-64.Linux-x86_64.tar.xz
