@@ -15,3 +15,9 @@ jobs:
         with:
             name: firmware
             path: bin/*
+      - name: Cache OpenWRT Downloads
+        id: cache-primes
+        uses: actions/cache@v4
+        with:
+          path: openwrt-imagebuilder-23.05.5-x86-64.Linux-x86_64.tar.xz
+          key: x86_64-imagebuilder
