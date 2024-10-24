@@ -27,7 +27,7 @@ jobs:
         with:
           path: |
             openwrt-imagebuilder-*
-          key: download-cache
+          key: download-cache-${{ matrix.nodes }}
       - name: Install Build depdencies
         run: sudo apt-get install -y rake build-essential make gawk rclone 
       - run: rake
