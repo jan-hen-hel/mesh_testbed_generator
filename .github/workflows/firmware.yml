@@ -34,11 +34,6 @@ jobs:
         run: echo ${{ secrets.SECRETS_YML_GPG_KEY }} | gpg --batch --yes --passphrase-fd 0 secrets.yml.gpg
       - run: rake
         name: Building Firmware
-      - uses: actions/upload-artifact@v4
-        name: Uploading Firmware Artifacts
-        with:
-            name: firmware
-            path: bin/*-squashfs-combined.img.gz
       - name: Save Download Cache
         id: cache-save
         uses: actions/cache/save@v4
