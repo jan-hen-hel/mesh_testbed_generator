@@ -7,7 +7,7 @@ CONFIGURATION = {
   'platform_type' => '64',
   'download_base' => '',
   'sdk_base' => '',
-  'directory' = '' 
+  'directory' => '' 
 }
 task :default => :generate_all
 task :generate_all do
@@ -26,7 +26,7 @@ task :generate_all do
   CONFIGURATION['sdk_base'] = "openwrt-imagebuilder-#{openwrt_version}-#{platform}-#{platform_type}.Linux-x86_64"
   sdk_archive = "#{CONFIGURATION['sdk_base']}.tar.xz"
   unless File.exists? CONFIGURATION['sdk_base'] 
-    system("wget #{DOWNLOAD_BASE}#{sdk_archive}") unless File.exists? sdk_archive
+    system("wget #{CONFIGURATION['download_base']}#{sdk_archive}") unless File.exists? sdk_archive
     system("tar xf #{sdk_archive}")
   end
   nodes.delete('build')
