@@ -15,12 +15,13 @@ task :generate_all do
     raise "\n \t >>> Please decrypt secrets.yml.gpg first \n\n\n"
   end
   secrets = YAML.load_file("secrets.yml")
-  nodes = YAML.load_file("nodes.yml")
+  nodes_file = ENV['NODES_FILE'] || "nodes.yml"
+  nodes = YAML.load_file(nodes_file)
   openwrt_version   = nodes['build']['openwrt_version']
   platform          = nodes['build']['platform']
   platform_type     = nodes['build']['platform_type']
   directory         = nodes['build']['directory']
-  CONFIGURATION['openwrt_version']  =  openwrt_version
+  CONFIGURATION['openwrt_version']  = openwrt_version
   CONFIGURATION['platform']         = platform
   CONFIGURATION['directory']        = directory
   CONFIGURATION['platform_type']    = platform_type
