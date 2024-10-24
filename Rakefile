@@ -17,7 +17,7 @@ task :generate_all do
   secrets = YAML.load_file("secrets.yml")
   nodes = YAML.load_file("nodes.yml")
   openwrt_version = nodes['build']['openwrt_version']
-  platform = nodes['build']['openwrt_version']
+  platform = nodes['build']['platform']
   platform_type = nodes['build']['platform_type']
   CONFIGURATION['openwrt_version'] =  openwrt_version
   CONFIGURATION['platform'] = platform
