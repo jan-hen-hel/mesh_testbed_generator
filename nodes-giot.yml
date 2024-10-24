@@ -1,16 +1,16 @@
 build:
   platform: ath79
-  platform_type: 'ath79'
+  platform_type: 'generic'
   openwrt_version: 23.05.5
   directory: files-giot
 
 giot-1:
-  profile: 'generic'
+  profile: 'glinet_gl-ar750'
   hostname: 'giot-1'
   packages: 'luci-ssl'
 
 giot-2:
-  profile: 'generic'
+  profile: 'glinet_gl-ar750'
   hostname: 'giot-2'
   packages: 'luci-ssl'
 
