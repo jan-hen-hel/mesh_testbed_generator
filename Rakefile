@@ -2,11 +2,11 @@ require "erb"
 require "rake"
 require 'yaml'
 CONFIGURATION = {
-  'openwrt_version' => "23.05.5"
-  'platform' => 'x86'
-  'platform_type' => '64'
-  'download_base' => ''
-  'sdk_base' => ''
+  'openwrt_version' => "23.05.5",
+  'platform' => 'x86',
+  'platform_type' => '64',
+  'download_base' => '',
+  'sdk_base' => '',
   'directory' = '' 
 }
 task :default => :generate_all
