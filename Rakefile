@@ -16,14 +16,16 @@ task :generate_all do
   end
   secrets = YAML.load_file("secrets.yml")
   nodes = YAML.load_file("nodes.yml")
-  openwrt_version = nodes['build']['openwrt_version']
-  platform = nodes['build']['platform']
-  platform_type = nodes['build']['platform_type']
-  CONFIGURATION['openwrt_version'] =  openwrt_version
-  CONFIGURATION['platform'] = platform
-  CONFIGURATION['platform_type'] = platform_type
-  CONFIGURATION['download_base'] = "https://downloads.openwrt.org/releases/#{openwrt_version}/targets/#{platform}/#{platform_type}/"
-  CONFIGURATION['sdk_base'] = "openwrt-imagebuilder-#{openwrt_version}-#{platform}-#{platform_type}.Linux-x86_64"
+  openwrt_version   = nodes['build']['openwrt_version']
+  platform          = nodes['build']['platform']
+  platform_type     = nodes['build']['platform_type']
+  directory         = nodes['build']['directory']
+  CONFIGURATION['openwrt_version']  =  openwrt_version
+  CONFIGURATION['platform']         = platform
+  CONFIGURATION['directory']        = directory
+  CONFIGURATION['platform_type']    = platform_type
+  CONFIGURATION['download_base']    = "https://downloads.openwrt.org/releases/#{openwrt_version}/targets/#{platform}/#{platform_type}/"
+  CONFIGURATION['sdk_base']         = "openwrt-imagebuilder-#{openwrt_version}-#{platform}-#{platform_type}.Linux-x86_64"
   sdk_archive = "#{CONFIGURATION['sdk_base']}.tar.xz"
   unless File.exists? CONFIGURATION['sdk_base'] 
     system("wget #{CONFIGURATION['download_base']}#{sdk_archive}") unless File.exists? sdk_archive
