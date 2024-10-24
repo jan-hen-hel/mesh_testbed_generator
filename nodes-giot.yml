@@ -1,0 +1,16 @@
+build:
+  platform: ath79
+  platform_type: 'ath79'
+  openwrt_version: 23.05.5
+  directory: files-giot
+
+giot-1:
+  profile: 'generic'
+  hostname: 'giot-1'
+  packages: 'luci-ssl'
+
+giot-2:
+  profile: 'generic'
+  hostname: 'giot-2'
+  packages: 'luci-ssl'
+
