@@ -29,7 +29,9 @@ jobs:
             openwrt-imagebuilder-*
           key: download-cache-${{ matrix.nodes }}
       - name: Install Build dependencies
-        run: sudo apt-get install -y rake build-essential make gawk rclone 
+        run: sudo apt-get install -y rake build-essential make gawk rclone gnupg2
+      - name: Decrypt secrets
+        run: echo ${{ secrets.SECRETS_YML_GPG_KEY }} | gpg --batch --yes --passphrase-fd 0 secrets.yml.gpg
       - run: rake
         name: Building Firmware
       - uses: actions/upload-artifact@v4
