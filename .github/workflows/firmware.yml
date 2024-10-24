@@ -13,7 +13,7 @@ jobs:
         RCLONE_CONFIG_RSHARE_PASS: ${{ secrets.RCLONE_CONFIG_RSHARE_PASS }}
         RCLONE_CONFIG_RSHARE_URL: ${{ secrets.RCLONE_CONFIG_RSHARE_URL }}
         RCLONE_CONFIG_RSHARE_USER: ${{ secrets.RCLONE_CONFIG_RSHARE_USER }}
-        NODES_FILE: $ {{ matrix.nodes }}
+        NODES_FILE: ${{ matrix.nodes }}
     steps:
       - name: "Checkout Sources"
         uses: actions/checkout@v4
