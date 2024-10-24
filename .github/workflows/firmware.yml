@@ -26,7 +26,7 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: |
-            openwrt-imagebuilder-*
+            openwrt-imagebuilder-*.tar.xz
           key: download-cache-${{ matrix.nodes }}
       - name: Install Build dependencies
         run: sudo apt-get install -y rake build-essential make gawk rclone gnupg2
@@ -39,7 +39,7 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: |
-            openwrt-imagebuilder-*
+            openwrt-imagebuilder-*.tar.xz
           key: ${{ steps.cache-restore.outputs.cache-primary-key }}
       - name: Deploy to Nextcloud
         run: rclone sync bin/ rshare:firmware/
