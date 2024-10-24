@@ -4,23 +4,23 @@ build:
   openwrt_version: 23.05.5
   directory: files-apu
 
-apu-1:
+apu-10:
+  apu_id: '10'
   profile: 'generic'
   hostname: 'smarthome-apu-10'
-  packages: 'openvswitch wpad kmod-mt7915-firmware kmod-mt7915e luci-ssl'
-  ipv4_lan: '198.19.3.10'
+  packages: 'openvswitch wpad-mesh-mbedtls kmod-mt7915-firmware kmod-mt7915e luci-ssl'
   run_dhcpd_on_lan: true
 
-apu-2:
+apu-11:
+  apu_id: '11'
   profile: 'generic'
   hostname: 'smarthome-apu-11'
-  packages: 'openvswitch wpad kmod-mt7915-firmware kmod-mt7915e luci-ssl'
-  ipv4_lan: '198.19.3.11'
+  packages: 'openvswitch wpad-mesh-mbedtls kmod-mt7915-firmware kmod-mt7915e luci-ssl'
   run_dhcpd_on_lan: false
 
-apu-3:
+apu-12:
+  apu_id: '12'
   profile: 'generic'
   hostname: 'smarthome-apu-12'
-  packages: 'openvswitch wpad kmod-mt7915-firmware kmod-mt7915e luci-ssl'
-  ipv4_lan: '198.19.3.12'
+  packages: 'openvswitch wpad-mesh-mbedtls kmod-mt7915-firmware kmod-mt7915e luci-ssl'
   run_dhcpd_on_lan: false

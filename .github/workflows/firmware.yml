@@ -26,23 +26,20 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: |
-            openwrt-imagebuilder-*
+            openwrt-imagebuilder-*.tar.xz
           key: download-cache-${{ matrix.nodes }}
       - name: Install Build dependencies
-        run: sudo apt-get install -y rake build-essential make gawk rclone 
+        run: sudo apt-get install -y rake build-essential make gawk rclone gnupg2
+      - name: Decrypt secrets
+        run: echo ${{ secrets.SECRETS_YML_GPG_KEY }} | gpg --batch --yes --passphrase-fd 0 secrets.yml.gpg
       - run: rake
         name: Building Firmware
-      - uses: actions/upload-artifact@v4
-        name: Uploading Firmware Artifacts
-        with:
-            name: firmware
-            path: bin/*-squashfs-combined.img.gz
       - name: Save Download Cache
         id: cache-save
         uses: actions/cache/save@v4
         with:
           path: |
-            openwrt-imagebuilder-*
+            openwrt-imagebuilder-*.tar.xz
           key: ${{ steps.cache-restore.outputs.cache-primary-key }}
       - name: Deploy to Nextcloud
-        run: rclone sync bin/ rshare:firmware/
+        run: rclone sync bin rshare:firmware/${{ matrix.nodes }}
