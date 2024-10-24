@@ -1,0 +1,5 @@
+uci -m import wireless < /var/tmp/wireless.uci
+rm /var/tmp/wireless.uci
+uci set wireless.radio1.disabled='0'
+uci commit wireless
+wifi

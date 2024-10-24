@@ -1,0 +1,7 @@
+config wifi-iface 'wifinet0'
+  option device 'radio1'
+  option mode 'sta'
+  option network 'mgmt'
+  option ssid 'SmartHomeLab-Mgmt'
+  option encryption 'sae'
+  option key '<%= @secrets['mgmt_wlan_psk']%>'
