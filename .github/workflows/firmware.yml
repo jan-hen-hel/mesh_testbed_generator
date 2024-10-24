@@ -5,8 +5,8 @@ jobs:
   Build:
     runs-on: ubuntu-24.04
     strategy:
-  	matrix:
-    	nodes: ["nodes-apu.yml", "nodes-giot.yml"]
+  	  matrix:
+    	  nodes: ["nodes-apu.yml", "nodes-giot.yml"]
     env:
         RCLONE_CONFIG_RSHARE_VENDOR: nextcloud
         RCLONE_CONFIG_RSHARE_TYPE: webdav
