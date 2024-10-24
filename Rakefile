@@ -46,7 +46,7 @@ end
 def prepare_directory(dir_name)
   FileUtils.rm_r dir_name if File.exists? dir_name
   dir = CONFIGURATION['directory']
-  FileUtils.cp_r 'files', dir_name, :preserve => true
+  FileUtils.cp_r dir, dir_name, :preserve => true
 end
 
 def process_erb(node,erb,base,secrets)
