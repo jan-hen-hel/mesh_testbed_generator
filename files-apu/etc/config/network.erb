@@ -13,7 +13,7 @@ config device
 config interface 'lan'
         option device 'br-lan'
         option proto 'static'
-        option ipaddr '198.18.3.<%= @node['apu_id'] %>'
+        option ipaddr '198.19.3.<%= @node['apu_id'] %>'
         option netmask '255.255.255.0'
         option ip6assign '60'
 
