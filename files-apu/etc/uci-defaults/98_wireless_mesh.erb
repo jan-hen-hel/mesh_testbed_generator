@@ -1,19 +1,28 @@
 uci -q batch <<EOF
-  set wireless.<%= @node['mesh_if']%>.disabled='0'
-  set wireless.default_<%= @node['mesh_if']%>.network='lan'
-  set wireless.default_<%= @node['mesh_if']%>.mode='mesh'
-  set wireless.default_<%= @node['mesh_if']%>.mesh_id='smarthome-mesh'
-  set wireless.default_<%= @node['mesh_if']%>.encryption='sae'
-  set wireless.default_<%= @node['mesh_if']%>.mesh_fwding='1'
-  set wireless.default_<%= @node['mesh_if']%>.mesh_rssi_threshold='0'
-  set wireless.default_<%= @node['mesh_if']%>.key='<%= @secrets['mesh_wlan_psk']%>'
+  set wireless.radio1.disabled='0'
+  set wireless.default_radio1.network='lan'
+  set wireless.default_radio1.mode='mesh'
+  set wireless.default_radio1.mesh_id='smarthome-mesh'
+  set wireless.default_radio1.encryption='sae'
+  set wireless.default_radio1.mesh_fwding='1'
+  set wireless.default_radio1.mesh_rssi_threshold='0'
+  set wireless.default_radio1.key='<%= @secrets['mesh_wlan_psk']%>'
 
-  set wireless.<%= @node['mesh_if']%>.channel='165'
-  set wireless.<%= @node['mesh_if']%>.band='5g'
-  set wireless.<%= @node['mesh_if']%>.htmode='HE20'
-  set wireless.<%= @node['mesh_if']%>.country='NO'
-  set wireless.<%= @node['mesh_if']%>.cell_density='0'
-  set wireless.<%= @node['mesh_if']%>.txpower='10'
+  set wireless.radio1.channel='165'
+  set wireless.radio1.band='5g'
+  set wireless.radio1.htmode='HE20'
+  set wireless.radio1.country='NO'
+  set wireless.radio1.cell_density='0'
+  set wireless.radio1.txpower='10'
+
+
+  set wireless.radio0.disabled='0'
+  set wireless.radio0.channel='<%= @node['wlan_channel'] %>'
+  set wireless.default_radio0.network='lan'
+  set wireless.default_radio0.mode='ap'
+  set wireless.default_radio0.ssid='apu-<%= @node['apu_id'] %>-lan'
+  set wireless.default_radio0.encryption='sae'
+  set wireless.default_radio0.key='<%= @secrets['lan_wlan_psk']%>'
 
   commit wireless
 EOF

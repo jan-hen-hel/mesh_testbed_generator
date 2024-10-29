@@ -1,3 +1,0 @@
-[submodule "files-apu/srv/micro-segmentation"]
-	path = files-apu/srv/micro-segmentation
-	url = git@github.com:jan-hen-hel/micro-segmentation.git
