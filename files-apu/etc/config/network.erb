@@ -19,7 +19,7 @@ config interface 'lan'
 
 config interface 'wan'
         option device 'eth0'
-option hostname 'apu-<%= @node['apu_id'] %>-wan'
+        option hostname 'apu-<%= @node['apu_id'] %>-wan'
         option proto 'dhcp'
 
 config device
