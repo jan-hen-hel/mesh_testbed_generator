@@ -8,17 +8,16 @@ config device
         option name 'br-lan'
         option type 'bridge'
         list ports 'eth1'
+        list ports 'eth2'
 
 config interface 'lan'
         option device 'br-lan'
         option proto 'static'
-        option ipaddr '198.19.3.<%= @node['apu_id'] %>'
+        option ipaddr '192.168.1.1'
         option netmask '255.255.255.0'
-        option ip6assign '60'
 
 config interface 'wan'
         option device 'eth0'
-        option hostname 'apu-<%= @node['apu_id'] %>-wan'
         option proto 'dhcp'
 
 config device
@@ -29,5 +28,4 @@ config device
 
 config interface 'mgmt'
         option proto 'dhcp'
-        option hostname 'apu-<%= @node['apu_id'] %>-mgmt'
         option device 'eth0.254'
