@@ -7,10 +7,10 @@ build:
 giot-1:
   profile: 'glinet_gl-ar750'
   hostname: 'giot-1'
-  packages: 'luci-ssl iperf3'
+  packages: 'luci-ssl iperf3 openssh-sftp-server openssh-server'
 
 giot-2:
   profile: 'glinet_gl-ar750'
   hostname: 'giot-2'
-  packages: 'luci-ssl iperf3'
+  packages: 'luci-ssl iperf3 openssh-sftp-server openssh-server'
 

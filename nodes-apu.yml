@@ -8,7 +8,7 @@ apu-10:
   apu_id: '10'
   profile: 'generic'
   hostname: 'smarthome-apu-10'
-  packages: 'openvswitch wpad-mesh-mbedtls kmod-mt7915-firmware kmod-mt7915e luci-ssl iperf3 git openssh-client-utils openssh-client'
+  packages: 'openvswitch wpad-mesh-mbedtls kmod-mt7915-firmware kmod-mt7915e luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server'
   run_dhcpd_on_lan: true
   wlan_channel: 1
 
@@ -16,7 +16,7 @@ apu-11:
   apu_id: '11'
   profile: 'generic'
   hostname: 'smarthome-apu-11'
-  packages: 'openvswitch wpad-mesh-mbedtls kmod-mt7915-firmware kmod-mt7915e luci-ssl iperf3 git openssh-client-utils openssh-client'
+  packages: 'openvswitch wpad-mesh-mbedtls kmod-mt7915-firmware kmod-mt7915e luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server'
   run_dhcpd_on_lan: false
   wlan_channel: 6
 
@@ -24,6 +24,6 @@ apu-12:
   apu_id: '12'
   profile: 'generic'
   hostname: 'smarthome-apu-12'
-  packages: 'openvswitch wpad-mesh-mbedtls kmod-mt7915-firmware kmod-mt7915e luci-ssl iperf3 git openssh-client-utils openssh-client'
+  packages: 'openvswitch wpad-mesh-mbedtls kmod-mt7915-firmware kmod-mt7915e luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server'
   run_dhcpd_on_lan: false
   wlan_channel: 12

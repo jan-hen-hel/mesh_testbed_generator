@@ -7,4 +7,4 @@ build:
 apu-rescue:
   profile: 'generic'
   hostname: 'apu-rescue'
-  packages: 'wpad-mesh-mbedtls kmod-mt7915-firmware kmod-mt7915e luci-ssl iperf3 git openssh-client-utils openssh-client openssh-sftp-server'
+  packages: 'wpad-mesh-mbedtls kmod-mt7915-firmware kmod-mt7915e luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server'

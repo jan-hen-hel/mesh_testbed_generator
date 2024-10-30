@@ -5,13 +5,16 @@ build:
   directory: files-apu-giot
 
 apu-giot-20:
+  apu_id: 20
   hostname: 'apu-giot-20'
-  packages: 'wpad-mesh-mbedtls kmod-mt7915-firmware kmod-mt7915e luci-ssl iperf3 git openssh-client-utils openssh-client'
+  packages: 'wpad-mesh-mbedtls kmod-mt7915-firmware kmod-mt7915e luci-ssl iperf3 git openssh-client-utils openssh-client openssh-sftp-server openssh-server'
 
 apu-giot-21:
+  apu_id: 21
   hostname: 'apu-giot-21'
-  packages: 'wpad-mesh-mbedtls kmod-mt7915-firmware kmod-mt7915e luci-ssl iperf3 git openssh-client-utils openssh-client'
+  packages: 'wpad-mesh-mbedtls kmod-mt7915-firmware kmod-mt7915e luci-ssl iperf3 git openssh-client-utils openssh-client openssh-sftp-server openssh-server'
 
 apu-giot-22:
+  apu_id: 22
   hostname: 'apu-giot-22'
-  packages: 'wpad-mesh-mbedtls kmod-mt7915-firmware kmod-mt7915e luci-ssl iperf3 git openssh-client-utils openssh-client'
+  packages: 'wpad-mesh-mbedtls kmod-mt7915-firmware kmod-mt7915e luci-ssl iperf3 git openssh-client-utils openssh-client openssh-sftp-server openssh-server'
