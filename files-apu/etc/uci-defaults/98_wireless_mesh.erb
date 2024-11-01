@@ -1,5 +1,5 @@
 uci -q batch <<EOF
-  set wireless.radio1.disabled='0'
+  del wireless.radio1.disabled
   set wireless.default_radio1.network='lan'
   set wireless.default_radio1.mode='mesh'
   set wireless.default_radio1.mesh_id='smarthome-mesh'
@@ -16,7 +16,7 @@ uci -q batch <<EOF
   set wireless.radio1.txpower='10'
 
 
-  set wireless.radio0.disabled='0'
+  del wireless.radio0.disabled
   set wireless.radio0.channel='<%= @node['wlan_channel'] %>'
   set wireless.default_radio0.network='lan'
   set wireless.default_radio0.mode='ap'
