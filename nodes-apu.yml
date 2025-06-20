@@ -8,35 +8,35 @@ apu-g01:
   apu_id: '01'
   profile: 'generic'
   hostname: 'alidade'
-  packages: 'luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync'
+  packages: 'luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom lsusb'
 
 apu-g02:
   apu_id: '02'
   profile: 'generic'
   hostname: 'barometer'
-  packages: 'luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync'
+  packages: 'luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom lsusb'
 
 apu-g03:
   apu_id: '03'
   profile: 'generic'
   hostname: 'chronometer'
-  packages: 'luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync'
+  packages: 'luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom lsusb'
 
 
 apu-g04:
   apu_id: '04'
   profile: 'generic'
   hostname: 'dipcircle'
-  packages: 'luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync'
+  packages: 'luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom lsusb'
 
 apu-g05:
   apu_id: '05'
   profile: 'generic'
   hostname: 'ephemeris'
-  packages: 'luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync'
+  packages: 'luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom lsusb'
 
 apu-g06:
   apu_id: '06'
   profile: 'generic'
   hostname: 'fathom'
-  packages: 'luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync'
+  packages: 'luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom lsusb'
