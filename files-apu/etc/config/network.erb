@@ -16,9 +16,11 @@ config interface 'lan'
         option proto 'static'
         option ipaddr '198.19.254.2<%= @node['apu_id'] %>'
         option netmask '255.255.255.0'
+        option dns '8.8.8.8 8.8.4.4'
 
 config route 'wired_default'
         option interface 'lan'
         option target '0.0.0.0/0'
         option gateway '198.19.254.1'
         option metric '10'
+
