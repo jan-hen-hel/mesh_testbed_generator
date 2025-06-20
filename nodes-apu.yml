@@ -8,5 +8,5 @@ apu-g01:
   apu_id: '01'
   profile: 'generic'
   hostname: 'alidade'
-  packages: 'luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount'
+  packages: 'luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
 
