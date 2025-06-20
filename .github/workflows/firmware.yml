@@ -45,4 +45,4 @@ jobs:
             openwrt-imagebuilder-*.tar.zst
           key: ${{ steps.cache-restore.outputs.cache-primary-key }}
       - name: Deploy to Nextcloud
-        run: rclone sync bin rshare:firmware/${{ matrix.nodes }}
+        run: rclone sync bin rshare:firmware-jammertest/${{ matrix.nodes }}
