@@ -1,29 +1,42 @@
 build:
   platform: x86
   platform_type: '64'
-  openwrt_version: 23.05.5
+  openwrt_version: 24.10.1
   directory: files-apu
 
-apu-10:
-  apu_id: '10'
+apu-g01:
+  apu_id: '01'
   profile: 'generic'
-  hostname: 'smarthome-apu-10'
-  packages: 'openvswitch wpad-mesh-mbedtls kmod-mt7915-firmware kmod-mt7915e luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3'
-  run_dhcpd_on_lan: true
-  wlan_channel: 1
+  hostname: 'alidade'
+  packages: 'luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync'
 
-apu-11:
-  apu_id: '11'
+apu-g02:
+  apu_id: '02'
   profile: 'generic'
-  hostname: 'smarthome-apu-11'
-  packages: 'openvswitch wpad-mesh-mbedtls kmod-mt7915-firmware kmod-mt7915e luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3'
-  run_dhcpd_on_lan: false
-  wlan_channel: 6
+  hostname: 'barometer'
+  packages: 'luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync'
 
-apu-12:
-  apu_id: '12'
+apu-g03:
+  apu_id: '03'
   profile: 'generic'
-  hostname: 'smarthome-apu-12'
-  packages: 'openvswitch wpad-mesh-mbedtls kmod-mt7915-firmware kmod-mt7915e luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3'
-  run_dhcpd_on_lan: false
-  wlan_channel: 12
+  hostname: 'chronometer'
+  packages: 'luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync'
+
+
+apu-g04:
+  apu_id: '04'
+  profile: 'generic'
+  hostname: 'dipcircle'
+  packages: 'luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync'
+
+apu-g05:
+  apu_id: '05'
+  profile: 'generic'
+  hostname: 'ephemeris'
+  packages: 'luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync'
+
+apu-g06:
+  apu_id: '06'
+  profile: 'generic'
+  hostname: 'fathom'
+  packages: 'luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync'

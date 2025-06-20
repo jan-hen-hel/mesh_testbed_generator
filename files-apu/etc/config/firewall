@@ -117,14 +117,3 @@ config rule
 	option dest_port '500'
 	option proto 'udp'
 	option target 'ACCEPT'
-
-config zone
-	option name 'mgmt'
-	option input 'ACCEPT'
-	option output 'ACCEPT'
-	option forward 'ACCEPT'
-	list network 'mgmt'
-
-config forwarding
-	option src 'mgmt'
-	option dest 'lan'
