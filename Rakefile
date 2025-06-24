@@ -62,8 +62,8 @@ end
 
 def generate_firmware(node_name,profile,packages)
   FileUtils.rm_r "#{CONFIGURATION['sdk_base']}/bin/" if File.exists?  "#{CONFIGURATION['sdk_base']}/bin/"
-  puts "Exec: make -C '#{CONFIGURATION['sdk_base']}' image PROFILE=#{profile} PACKAGES='#{packages}'  FILES=./files_generated"
-  system("make -C '#{CONFIGURATION['sdk_base']}' image PROFILE=#{profile} PACKAGES='#{packages}'  FILES=./files_generated")
+  puts "Exec: make -C '#{CONFIGURATION['sdk_base']}' image PROFILE=#{profile} PACKAGES='#{packages}'  FILES=./files_generated GRUB_SERIAL_CONFIG='#None'"
+  system("make -C '#{CONFIGURATION['sdk_base']}' image PROFILE=#{profile} PACKAGES='#{packages}'  FILES=./files_generated GRUB_SERIAL_CONFIG='#None'")
 
  Dir.glob("#{CONFIGURATION['sdk_base']}/bin/targets/#{CONFIGURATION['platform']}/#{CONFIGURATION['platform_type']}/openwrt-*squashfs*").each do |bin_file|
     new_name = File.basename(bin_file).gsub "openwrt-#{CONFIGURATION['openwrt_version']}-#{CONFIGURATION['platform']}-#{CONFIGURATION['platform_type']}-#{profile}","#{node_name}"
