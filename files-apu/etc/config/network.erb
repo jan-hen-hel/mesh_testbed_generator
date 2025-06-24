@@ -38,3 +38,25 @@ config wireguard_p2p
 	option persistent_keepalive '15'
 	option route_allowed_ips '1'
 	list allowed_ips '198.19.250.1/32'
+
+
+config interface 'module_0'
+	option proto 'qmi'
+	option device '/dev/cdc-wdm0'
+	option apn 'telenor'
+	option v6apn 'telenor'
+	option auth 'none'
+	option pdptype 'ipv4'
+	option delegate '0'
+        option metric '5'
+
+config interface 'module_1'
+	option proto 'qmi'
+	option device '/dev/cdc-wdm1'
+	option apn 'telia'
+	option v6apn 'telia'
+	option auth 'none'
+	option pdptype 'ipv4'
+	option delegate '0'
+        option metric '8'
+
