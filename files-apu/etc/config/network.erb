@@ -7,9 +7,13 @@ config interface 'loopback'
 config device
         option name 'br-lan'
         option type 'bridge'
-        list ports 'eth0'
         list ports 'eth1'
         list ports 'eth2'
+
+config interface 'wan'
+	option device 'eth0'
+	option proto 'dhcp'
+
 
 config interface 'lan'
         option device 'br-lan'
