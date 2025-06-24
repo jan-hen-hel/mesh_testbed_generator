@@ -9,12 +9,16 @@ config device
         option type 'bridge'
         list ports 'eth1'
         list ports 'eth2'
-        list ports 'eth3'
 
+config device
+				option name 'br-wan'
+				option type 'bridge'
+				list ports 'eth0'
+				list ports 'eth3'
 
 config interface 'wan'
-	option device 'eth0'
-	option proto 'dhcp'
+				option device 'br-wan'
+				option proto 'dhcp'
 
 
 config interface 'lan'
@@ -23,12 +27,6 @@ config interface 'lan'
         option ipaddr '198.19.254.2<%= @node['apu_id'] %>'
         option netmask '255.255.255.0'
         option dns '8.8.8.8 8.8.4.4'
-
-config route 'wired_default'
-        option interface 'lan'
-        option target '0.0.0.0/0'
-        option gateway '198.19.254.1'
-        option metric '10'
 
 config interface 'p2p'
 	option proto 'wireguard'
@@ -46,7 +44,7 @@ config wireguard_p2p
 	list allowed_ips '198.19.250.1/32'
 
 
-config interface 'module_0'
+config interface 'telenor'
 	option proto 'qmi'
 	option device '/dev/cdc-wdm0'
 	option apn 'telenor'
@@ -54,9 +52,9 @@ config interface 'module_0'
 	option auth 'none'
 	option pdptype 'ipv4'
 	option delegate '0'
-        option metric '5'
+  option metric '5'
 
-config interface 'module_1'
+config interface 'telia'
 	option proto 'qmi'
 	option device '/dev/cdc-wdm1'
 	option apn 'telia'
@@ -64,5 +62,5 @@ config interface 'module_1'
 	option auth 'none'
 	option pdptype 'ipv4'
 	option delegate '0'
-        option metric '8'
+  option metric '8'
 

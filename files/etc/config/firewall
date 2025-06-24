@@ -16,6 +16,8 @@ config zone
 	option name 'wan'
 	list network 'wan'
 	list network 'wan6'
+	list network 'telenor'
+	list network 'telia'
 	option input 'REJECT'
 	option output 'ACCEPT'
 	option forward 'REJECT'
