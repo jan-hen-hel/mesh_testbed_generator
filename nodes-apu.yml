@@ -2,7 +2,7 @@ build:
   platform: x86
   platform_type: '64'
   openwrt_version: 24.10.1
-  directory: files-apu
+  directory: files
 
 apu-g01:
   apu_id: '01'
