@@ -8,32 +8,32 @@ apu-g11:
   apu_id: '11'
   profile: 'generic'
   hostname: 'kamal'
-  packages: 'luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
+  packages: 'kmod-igb pciutils luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
 
 apu-g12:
   apu_id: '12'
   profile: 'generic'
   hostname: 'lodestone'
-  packages: 'luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
+  packages: 'kmod-igb pciutils luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
 
 apu-g13:
   apu_id: '13'
   profile: 'generic'
   hostname: 'magnetometer'
-  packages: 'pciutils luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
+  packages: 'kmod-igb pciutils luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
 
 apu-g14:
   apu_id: '14'
   profile: 'generic'
   hostname: 'nocturlabium'
-  packages: 'pciutils luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
+  packages: 'kmod-igb pciutils luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
 
-#apu-g15:
-#  apu_id: '15'
-#  profile: 'generic'
-#  hostname: 'octant'
-#  packages: 'pciutils luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
-#
+apu-g15:
+  apu_id: '15'
+  profile: 'generic'
+  hostname: 'octant'
+  packages: 'kmod-igb pciutils luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
+
 #apu-g16:
 #  apu_id: '16'
 #  profile: 'generic'
