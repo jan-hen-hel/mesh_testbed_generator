@@ -33,9 +33,10 @@ task :generate_all do
     system("wget #{CONFIGURATION['download_base']}#{sdk_archive}") unless File.exists? sdk_archive
     system("tar xf #{sdk_archive}")
   end
+  globals = nodes['build']
   nodes.delete('build')
   nodes.values.each  do |v| # Data in the node section overwrites anything in the build-section
-    node_data = nodes['build'] + v # and build-section is default
+    node_data = globals + v # and build-section is default
     generate_node node_data,secrets
   end
 end
