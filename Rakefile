@@ -36,7 +36,7 @@ task :generate_all do
   globals = nodes['build']
   nodes.delete('build')
   nodes.values.each  do |v| # Data in the node section overwrites anything in the build-section
-    node_data = globals + v # and build-section is default
+    node_data = globals.merge(v) # and build-section is default
     generate_node node_data,secrets
   end
 end
