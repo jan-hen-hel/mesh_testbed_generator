@@ -3,36 +3,29 @@ build:
   platform_type: '64'
   openwrt_version: 24.10.1
   directory: files
+  packages: 'dockerd docker luci-app-dockerman kmod-igb pciutils luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
+  roofs_size_mb: 2000
+  profile: 'generic'
 
 apu-g01:
   apu_id: '01'
-  profile: 'generic'
   hostname: 'alidade'
-  packages: 'kmod-usb-net-asix-ax88179 pciutils luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
 
 apu-g02:
   apu_id: '02'
-  profile: 'generic'
   hostname: 'barometer'
-  packages: 'kmod-usb-net-asix-ax88179 pciutils luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
 
 apu-g03:
   apu_id: '03'
-  profile: 'generic'
   hostname: 'chronometer'
-  packages: 'kmod-usb-net-asix-ax88179 pciutils luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
 
 apu-g04:
   apu_id: '04'
-  profile: 'generic'
   hostname: 'dipcircle'
-  packages: 'kmod-usb-net-asix-ax88179 pciutils luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
 
 apu-g05:
   apu_id: '05'
-  profile: 'generic'
   hostname: 'ephemeris'
-  packages: 'kmod-usb-net-asix-ax88179 pciutils luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
 
 #apu-g06:
 #  apu_id: '06'
@@ -43,7 +36,6 @@ apu-g05:
 #apu-g07:
 #  apu_id: '07'
 #  profile: 'generic'
-#  hostname: 'gyroscope'
 #  packages: 'pciutils luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
 #
 #apu-g08:

@@ -17,6 +17,7 @@ task :generate_all do
   secrets = YAML.load_file("secrets.yml")
   nodes_file = ENV['NODES_FILE'] || "nodes.yml"
   nodes = YAML.load_file(nodes_file)
+  default_packages  = nodes['build']['packages']
   openwrt_version   = nodes['build']['openwrt_version']
   platform          = nodes['build']['platform']
   platform_type     = nodes['build']['platform_type']
@@ -33,7 +34,10 @@ task :generate_all do
     system("tar xf #{sdk_archive}")
   end
   nodes.delete('build')
-  nodes.values.each {|v| generate_node v,secrets}
+  nodes.values.each  do |v| # Data in the node section overwrites anything in the build-section
+    node_data = nodes['build'] + v # and build-section is default
+    generate_node node_data,secrets
+  end
 end
 
 def generate_node(node_cfg,secrets)
@@ -43,7 +47,7 @@ def generate_node(node_cfg,secrets)
     basename = erb_file.gsub '.erb',''
     process_erb(node_cfg,erb_file,basename,secrets)    
   end
-  generate_firmware(node_cfg['hostname'], node_cfg['profile'], node_cfg['packages'])
+  generate_firmware(node_cfg['hostname'], node_cfg['profile'], node_cfg['packages'], node_cfg['rootfs_size_mb'])
 end
 
 def prepare_directory(dir_name)
@@ -60,14 +64,20 @@ def process_erb(node,erb,base,secrets)
   FileUtils.rm erb
 end
 
-def generate_firmware(node_name,profile,packages)
+def generate_firmware(node_name,profile,packages, rootfs_size)
   puts "Remove serial console from grub"
   system("sed -i.bak 's/^\\@.*\\@//' #{CONFIGURATION['sdk_base']}/target/linux/x86/image/grub-pc.cfg")
   system("sed -i.bak 's/^\\@.*\\@//' #{CONFIGURATION['sdk_base']}/target/linux/x86/image/grub-efi.cfg")
 
+  rootfs_size_str = if rootfs_size
+                      "ROOTFS_PARTSIZE=\"#{rootfs_size}\""
+                    else
+                      ""
+                    end
+
   FileUtils.rm_r "#{CONFIGURATION['sdk_base']}/bin/" if File.exists?  "#{CONFIGURATION['sdk_base']}/bin/"
   puts "Exec: make -C '#{CONFIGURATION['sdk_base']}' image PROFILE=#{profile} PACKAGES='#{packages}'  FILES=./files_generated"
-  system("make -C '#{CONFIGURATION['sdk_base']}' image PROFILE=#{profile} PACKAGES='#{packages}'  FILES=./files_generated")
+  system("make -C '#{CONFIGURATION['sdk_base']}' image #{rootfs_size_str} PROFILE=#{profile} PACKAGES='#{packages}'  FILES=./files_generated")
 
  Dir.glob("#{CONFIGURATION['sdk_base']}/bin/targets/#{CONFIGURATION['platform']}/#{CONFIGURATION['platform_type']}/openwrt-*squashfs*").each do |bin_file|
     new_name = File.basename(bin_file).gsub "openwrt-#{CONFIGURATION['openwrt_version']}-#{CONFIGURATION['platform']}-#{CONFIGURATION['platform_type']}-#{profile}","#{node_name}"
