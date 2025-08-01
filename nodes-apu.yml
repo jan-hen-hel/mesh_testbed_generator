@@ -3,7 +3,7 @@ build:
   platform_type: '64'
   openwrt_version: 24.10.1
   directory: files
-  packages: 'dockerd docker luci-app-dockerman kmod-igb pciutils luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
+  packages: 'dockerd docker kmod-igb pciutils luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
   roofs_size_mb: 2000
   profile: 'generic'
 

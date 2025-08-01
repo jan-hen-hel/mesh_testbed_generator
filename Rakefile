@@ -80,7 +80,7 @@ def generate_firmware(node_name,profile,packages, rootfs_size)
   puts "Exec: make -C '#{CONFIGURATION['sdk_base']}' image PROFILE=#{profile} PACKAGES='#{packages}'  FILES=./files_generated"
   system("make -C '#{CONFIGURATION['sdk_base']}' image #{rootfs_size_str} PROFILE=#{profile} PACKAGES='#{packages}'  FILES=./files_generated")
 
- Dir.glob("#{CONFIGURATION['sdk_base']}/bin/targets/#{CONFIGURATION['platform']}/#{CONFIGURATION['platform_type']}/openwrt-*squashfs*").each do |bin_file|
+ Dir.glob("#{CONFIGURATION['sdk_base']}/bin/targets/#{CONFIGURATION['platform']}/#{CONFIGURATION['platform_type']}/openwrt-*").each do |bin_file|
     new_name = File.basename(bin_file).gsub "openwrt-#{CONFIGURATION['openwrt_version']}-#{CONFIGURATION['platform']}-#{CONFIGURATION['platform_type']}-#{profile}","#{node_name}"
     puts "Moving #{bin_file} to bin/#{new_name} "
     FileUtils.mv(bin_file, "bin/#{new_name}")
