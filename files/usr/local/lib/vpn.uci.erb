@@ -1,6 +1,6 @@
 config interface 'p2p'
     option proto 'wireguard'
-    option private_key "<%= @secrets['wireguard_keys'][@node['hostname']] %>"
+    option private_key '<%= @secrets['wireguard_keys'][@node['hostname']] %>'
     option mtu '1400'
     list addresses '198.19.250.2<%= @node['apu_id'] %>/24'
 
