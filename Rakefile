@@ -65,6 +65,7 @@ def process_erb(node,erb,base,secrets)
   FileUtils.rm erb
 end
 
+
 def generate_firmware(node_name,profile,packages, rootfs_size)
   puts "Remove serial console from grub"
   system("sed -i.bak 's/^\\@.*\\@//' #{CONFIGURATION['sdk_base']}/target/linux/x86/image/grub-pc.cfg")

@@ -1,0 +1,7 @@
+<%- for node in @nodes  do%>
+
+[Peer]
+PublicKey = <%= node.pubkey %>>
+AllowedIPs = <%= node.ipv4 %>/32
+
+<%- end %>
