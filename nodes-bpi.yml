@@ -3,7 +3,7 @@ build:
   platform_type: 'filogic'
   openwrt_version: '24.10.2'
   directory: files
-  packages: 'luci-proto-qmi dockerd docker kmod-igb pciutils luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
+  packages: 'kmod-usb-serial-sierrawireless kmod-usb-serial-qualcomm luci-proto-qmi dockerd docker kmod-igb pciutils luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
   profile: 'bananapi_bpi-r4'
 
 apu-g21:
