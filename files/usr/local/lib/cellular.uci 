@@ -1,0 +1,10 @@
+config interface 'telenor'
+	option proto 'qmi'
+	option device '/dev/cdc-wdm0'
+	option apn 'telenor'
+	option v6apn 'telenor'
+	option auth 'none'
+	option pdptype 'ipv4'
+	option delegate '0'
+    option metric '5'
+
