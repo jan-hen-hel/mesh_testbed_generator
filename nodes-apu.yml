@@ -3,28 +3,32 @@ build:
   platform_type: '64'
   openwrt_version: 24.10.2
   directory: files
-  packages: 'kmod-usb-serial-sierrawireless kmod-usb-serial-qualcomm luci-proto-qmi dockerd docker kmod-igb pciutils luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
+  packages: 'kmod-nvme kmod-usb-serial-sierrawireless kmod-usb-serial-qualcomm kmod-usb-serial-sierrawireless kmod-usb-serial-qualcomm luci-proto-qmi dockerd docker kmod-igb pciutils luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
   profile: 'generic'
 
 apu-g01:
   apu_id: '01'
   hostname: 'alidade'
+  node_id: '3100'
 
 apu-g02:
   apu_id: '02'
   hostname: 'barometer'
+  node_id: '3101'
 
 apu-g03:
   apu_id: '03'
   hostname: 'chronometer'
+  node_id: '3102'
 
 apu-g04:
   apu_id: '04'
   hostname: 'dipcircle'
+  node_id: '3103'
 
-apu-g05:
-  apu_id: '05'
-  hostname: 'ephemeris'
+#apu-g05:
+#  apu_id: '05'
+#  hostname: 'ephemeris'
 
 #apu-g06:
 #  apu_id: '06'

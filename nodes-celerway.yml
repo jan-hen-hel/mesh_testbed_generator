@@ -3,28 +3,31 @@ build:
   platform_type: 'generic'
   openwrt_version: 24.10.2
   directory: files
-  packages: 'luci-proto-qmi dockerd docker kmod-igb pciutils luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
+  packages: 'kmod-nvme kmod-usb-serial-sierrawireless kmod-usb-serial-qualcomm luci-proto-qmi dockerd docker kmod-igb pciutils luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-client openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan uqmi kmod-usb-net-cdc-mbim umbim rsync kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount fdisk'
   profile: 'generic'
 
 apu-g11:
   apu_id: '11'
   hostname: 'kamal'
+  node_id: '6361'
 
 apu-g12:
   apu_id: '12'
   hostname: 'lodestone'
+  node_id: '7065'
 
 apu-g13:
   apu_id: '13'
   hostname: 'magnetometer'
+  node_id: '4125'
 
-apu-g14:
-  apu_id: '14'
-  hostname: 'nocturlabium'
+#apu-g14:
+#  apu_id: '14'
+#  hostname: 'nocturlabium'
 
-apu-g15:
-  apu_id: '15'
-  hostname: 'octant'
+#apu-g15:
+#  apu_id: '15'
+#  hostname: 'octant'
 
 #apu-g16:
 #  apu_id: '16'

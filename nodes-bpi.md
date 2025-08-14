@@ -1,6 +1,0 @@
-
-
-uranometria
-vor
-waypoint
-xnav
