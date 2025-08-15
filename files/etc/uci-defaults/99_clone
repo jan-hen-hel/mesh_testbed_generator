@@ -1,3 +1,4 @@
 #!/bin/sh
 
+mv /root/ssh-config /root/.ssh
 /root/clone_repos.sh
