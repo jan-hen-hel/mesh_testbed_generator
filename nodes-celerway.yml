@@ -3,7 +3,7 @@ build:
   platform_type: 'generic'
   openwrt_version: 24.10.2
   directory: files
-  packages: 'qmi-utils kmod-nvme luci-proto-qmi dockerd docker kmod-igb pciutils luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount cfdisk'
+  packages: 'qmi-utils luci-proto-qmi dockerd docker kmod-igb pciutils luci-proto-wireguard luci-ssl iperf3 git openssh-client-utils openssh-server python3 picocom kmod-usb-net-qmi-wwan kmod-usb-serial-option picocom usbutils e2fsprogs fdisk kmod-fs-ext4 gdisk block-mount cfdisk'
   profile: 'generic'
   rootfs_size_mb: '200'
 
