@@ -78,7 +78,7 @@ def generate_firmware(node_name,profile,packages, rootfs_size)
                     end
 
   FileUtils.rm_r "#{CONFIGURATION['sdk_base']}/bin/" if File.exists?  "#{CONFIGURATION['sdk_base']}/bin/"
-  puts "Exec: make -C '#{CONFIGURATION['sdk_base']}' image PROFILE=#{profile} PACKAGES='#{packages}'  FILES=./files_generated"
+  puts "Exec: make -C '#{CONFIGURATION['sdk_base']}' #{rootfs_size_str} image PROFILE=#{profile} PACKAGES='#{packages}'  FILES=./files_generated"
   system("make -C '#{CONFIGURATION['sdk_base']}' image #{rootfs_size_str} PROFILE=#{profile} PACKAGES='#{packages}'  FILES=./files_generated")
 
  Dir.glob("#{CONFIGURATION['sdk_base']}/bin/targets/#{CONFIGURATION['platform']}/#{CONFIGURATION['platform_type']}/openwrt-*").each do |bin_file|
