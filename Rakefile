@@ -68,8 +68,8 @@ end
 
 def generate_firmware(node_name,profile,packages, rootfs_size)
   puts "Remove serial console from grub"
-  #system("sed -i.bak 's/^\\@.*\\@//' #{CONFIGURATION['sdk_base']}/target/linux/x86/image/grub-pc.cfg")
-  #system("sed -i.bak 's/^\\@.*\\@//' #{CONFIGURATION['sdk_base']}/target/linux/x86/image/grub-efi.cfg")
+  system("sed -i.bak 's/^\\@.*\\@//' #{CONFIGURATION['sdk_base']}/target/linux/x86/image/grub-pc.cfg")
+  system("sed -i.bak 's/^\\@.*\\@//' #{CONFIGURATION['sdk_base']}/target/linux/x86/image/grub-efi.cfg")
 
   rootfs_size_str = if rootfs_size
                       "ROOTFS_PARTSIZE=\"#{rootfs_size}\""
