@@ -21,10 +21,10 @@ jobs:
         with:
           submodules: 'true'
           token: ${{ secrets.PAT }}
-      - name: "Setup Ruby"
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.1' 
+      #- name: "Setup Ruby"
+      #  uses: ruby/setup-ruby@v1
+      #  with:
+      #    ruby-version: '3.1'
       - name: Restore Download Cache
         id: cache-restore
         uses: actions/cache/restore@v4
