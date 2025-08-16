@@ -1,11 +1,10 @@
 build:
   platform: x86
   platform_type: '64'
-  openwrt_version: 24.10.2
+  openwrt_version: 24.10.1
   directory: files
-  packages: 'openssh-sftp-server qmi-utils kmod-igb kmod-usb-serial-sierrawireless kmod-usb-serial-qualcomm luci-proto-qmi dockerd docker luci-ssl iperf3 git openssh-server openssh-sftp-server python3 picocom kmod-usb-net-cdc-ether kmod-usb-net-qmi-wwan kmod-usb-serial-option picocom usbutils e2fsprogs kmod-fs-ext4 gdisk block-mount cfdisk'
+  packages: 'openssh-sftp-server qmi-utils kmod-usb-serial-sierrawireless luci-proto-qmi dockerd docker luci-ssl iperf3 git openssh-sftp-server python3 picocom kmod-usb-net-qmi-wwan kmod-usb-serial-option picocom usbutils e2fsprogs kmod-fs-ext4 block-mount cfdisk'
   profile: 'generic'
-  rootfs_size_mb: '300'
 
 apu-g01:
   apu_id: '01'
