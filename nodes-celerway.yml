@@ -12,16 +12,21 @@ apu-g11:
   apu_id: '11'
   hostname: 'kamal'
   node_id: '6361'
+  lan_ip: '192.168.11.1'
+
 
 apu-g12:
   apu_id: '12'
   hostname: 'lodestone'
   node_id: '7065'
+  lan_ip: '192.168.12.1'
 
 apu-g13:
   apu_id: '13'
   hostname: 'magnetometer'
   node_id: '4125'
+  lan_ip: '192.168.13.1'
+
 
 #apu-g14:
 #  apu_id: '14'

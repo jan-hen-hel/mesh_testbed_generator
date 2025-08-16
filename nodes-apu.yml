@@ -3,28 +3,33 @@ build:
   platform_type: '64'
   openwrt_version: 24.10.1
   directory: files
-  packages: 'openssh-sftp-server qmi-utils kmod-usb-serial-sierrawireless luci-proto-qmi luci-ssl git openssh-sftp-server python3 picocom kmod-usb-net-qmi-wwan picocom e2fsprogs kmod-fs-ext4 block-mount cfdisk'
+  packages: 'docker dockerd openssh-sftp-server qmi-utils kmod-usb-serial-sierrawireless luci-proto-qmi luci-ssl git openssh-sftp-server python3 picocom kmod-usb-net-qmi-wwan picocom e2fsprogs kmod-fs-ext4 block-mount cfdisk'
   profile: 'generic'
+  rootfs_size_mb: '400'
 
 apu-g01:
   apu_id: '01'
   hostname: 'alidade'
   node_id: '3100'
+  lan_ip: '192.168.1.1'
 
 apu-g02:
   apu_id: '02'
   hostname: 'barometer'
   node_id: '3101'
+  lan_ip: '192.168.2.1'
 
 apu-g03:
   apu_id: '03'
   hostname: 'chronometer'
   node_id: '3102'
+  lan_ip: '192.168.3.1'
 
 apu-g04:
   apu_id: '04'
   hostname: 'dipcircle'
   node_id: '3103'
+  lan_ip: '192.168.4.1'
 
 #apu-g05:
 #  apu_id: '05'
