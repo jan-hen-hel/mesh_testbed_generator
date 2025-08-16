@@ -3,8 +3,8 @@ run-name: Building Firmeware Images
 on: [push]
 jobs:
   Build:
-    runs-on: ubuntu-24.04
-    #runs-on: self-hosted
+    #runs-on: ubuntu-24.04
+    runs-on: self-hosted
     strategy:
       matrix:
         nodes: ["nodes-apu.yml", "nodes-celerway.yml", "nodes-bpi.yml"]
