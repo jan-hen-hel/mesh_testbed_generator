@@ -1,6 +1,6 @@
 cat /usr/local/lib/vpn.uci | uci -m import network
 cat /usr/local/lib/cellular.uci | uci -m import network
 
-#uci set network.lan.ipaddr='<%= @node['lan_ip'] %>'
+uci set network.lan.ipaddr='<%= @node['lan_ip'] %>'
 
 uci commit network
