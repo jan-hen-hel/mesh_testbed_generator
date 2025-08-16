@@ -3,7 +3,7 @@ build:
   platform_type: '64'
   openwrt_version: 24.10.1
   directory: files
-  packages: 'openssh-sftp-server qmi-utils kmod-usb-serial-sierrawireless luci-proto-qmi dockerd docker luci-ssl git openssh-sftp-server python3 picocom kmod-usb-net-qmi-wwan picocom e2fsprogs kmod-fs-ext4 block-mount cfdisk'
+  packages: 'openssh-sftp-server qmi-utils kmod-usb-serial-sierrawireless luci-proto-qmi luci-ssl git openssh-sftp-server python3 picocom kmod-usb-net-qmi-wwan picocom e2fsprogs kmod-fs-ext4 block-mount cfdisk'
   profile: 'generic'
 
 apu-g01:
