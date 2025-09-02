@@ -31,9 +31,11 @@ apu-g04:
   node_id: '3103'
   lan_ip: '192.168.4.1'
 
-#apu-g05:
-#  apu_id: '05'
-#  hostname: 'ephemeris'
+apu-g05:
+  apu_id: '05'
+  hostname: 'ephemeris'
+  node_id: '0000'
+  lan_ip: '192.168.5.1'
 
 #apu-g06:
 #  apu_id: '06'
