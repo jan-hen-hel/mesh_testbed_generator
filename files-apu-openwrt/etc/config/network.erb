@@ -1,0 +1,22 @@
+config interface 'loopback'
+        option device 'lo'
+        option proto 'static'
+        option ipaddr '127.0.0.1'
+        option netmask '255.0.0.0'
+
+config device
+	option name 'br-lan'
+	option type 'bridge'
+	list ports 'eth1'
+	list ports 'eth2'
+
+config interface 'lan'
+	option device 'br-lan'
+	option proto 'static'
+	list ipaddr '10.254.0.<%= @node['apu_id'] %>/8'
+	option multipath 'off'
+
+config interface 'mgmt'
+        option proto 'dhcp'
+        option hostname 'openwrt-apu-<%= @node['apu_id'] %>-mgmt'
+        option device 'eth0'

@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-24.04
     strategy:
       matrix:
-        nodes: ["nodes-apu.yml", "nodes-giot.yml", "nodes-apu-giot.yml", "nodes-apu-rescue.yml"]
+        nodes: ["nodes-apu-openwrt.yml"] #nodes: ["nodes-apu.yml", "nodes-giot.yml", "nodes-apu-giot.yml", "nodes-apu-rescue.yml"
     env:
         RCLONE_CONFIG_RSHARE_VENDOR: nextcloud
         RCLONE_CONFIG_RSHARE_TYPE: webdav

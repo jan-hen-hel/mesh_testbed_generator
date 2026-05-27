@@ -27,7 +27,7 @@ task :generate_all do
   CONFIGURATION['platform_type']    = platform_type
   CONFIGURATION['download_base']    = "https://downloads.openwrt.org/releases/#{openwrt_version}/targets/#{platform}/#{platform_type}/"
   CONFIGURATION['sdk_base']         = "openwrt-imagebuilder-#{openwrt_version}-#{platform}-#{platform_type}.Linux-x86_64"
-  sdk_archive = "#{CONFIGURATION['sdk_base']}.tar.xz"
+  sdk_archive = "#{CONFIGURATION['sdk_base']}.tar.zst"
   unless File.exists? CONFIGURATION['sdk_base'] 
     system("wget #{CONFIGURATION['download_base']}#{sdk_archive}") unless File.exists? sdk_archive
     system("tar xf #{sdk_archive}")
