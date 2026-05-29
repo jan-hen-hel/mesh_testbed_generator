@@ -10,6 +10,6 @@ openwrt-apu-13:
   packages: 'wpad-mesh-mbedtls kmod-mt7915-firmware kmod-mt7915e luci-ssl iperf3 git openssh-client-utils openssh-client openssh-sftp-server openssh-server python3'
 
 openwrt-apu-14:
-  apu_id: 22
+  apu_id: 14
   hostname: 'openwrt-apu-14'
   packages: 'wpad-mesh-mbedtls kmod-mt7915-firmware kmod-mt7915e luci-ssl iperf3 git openssh-client-utils openssh-client openssh-sftp-server openssh-server python3'
