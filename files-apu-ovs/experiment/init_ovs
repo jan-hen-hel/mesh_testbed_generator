@@ -1,0 +1,35 @@
+#!/bin/bash
+
+NIC="eth0"
+BRIDGE="iot"
+MESH_NIC="eth2"
+
+if [ -z "$1" ]; then
+    echo "Usage: $0 <count>"
+    exit 1
+fi
+
+COUNT="$1"
+
+if ! ovs-vsctl br-exists "$BRIDGE"; then
+    ovs-vsctl add-br "$BRIDGE"
+fi
+
+ip link set "$NIC" up
+ip link set "$MESH_NIC" name mesh
+ip link set mesh up
+ovs-vsctl add-port "$BRIDGE" mesh
+
+for id in $(seq 1 "$COUNT"); do
+    IFACE="iot_${id}"
+
+    if ! ip link show "$IFACE" &>/dev/null; then
+        ip link add link "$NIC" name "$IFACE" type vlan id "$id"
+    fi
+
+    ip link set "$IFACE" up
+
+    if ! ovs-vsctl list-ports "$BRIDGE" | grep -q "^$IFACE$"; then
+        ovs-vsctl add-port "$BRIDGE" "$IFACE"
+    fi
+done

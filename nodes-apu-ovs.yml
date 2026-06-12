@@ -1,0 +1,15 @@
+build:
+  platform: x86
+  platform_type: '64'
+  openwrt_version: 25.12.4
+  directory: files-apu-ovs
+
+openwrt-apu-13:
+  apu_id: 13
+  hostname: 'ovs-apu-13'
+  packages: 'openvswitch-utils openvswitch wpad-mesh-mbedtls kmod-mt7915-firmware kmod-mt7915e luci-ssl iperf3 git openssh-client-utils openssh-client openssh-sftp-server openssh-server python3'
+
+openwrt-apu-14:
+  apu_id: 14
+  hostname: 'ovs-apu-14'
+  packages: 'openvswitch-utils openvswitch wpad-mesh-mbedtls kmod-mt7915-firmware kmod-mt7915e luci-ssl iperf3 git openssh-client-utils openssh-client openssh-sftp-server openssh-server python3'
