@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NIC="eth0"
+NIC="eth1"
 BRIDGE="iot"
 MESH_NIC="eth2"
 

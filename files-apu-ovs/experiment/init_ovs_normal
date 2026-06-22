@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# OVS in normal (transparent bridge) mode — mirrors the Linux bridge baseline.
+# No per-flow VLAN ports; server-side VLANs pass through as-is.
+
+BRIDGE="iot"
+
+if ! ovs-vsctl br-exists "$BRIDGE"; then
+    ovs-vsctl add-br "$BRIDGE"
+fi
+
+ip link set eth1 up
+ip link set eth2 up
+
+ovs-vsctl --may-exist add-port "$BRIDGE" eth1
+ovs-vsctl --may-exist add-port "$BRIDGE" eth2
